@@ -16,7 +16,7 @@ const TodoItem = ({ id, userId, title, completed }) => {
 	}
 
 	return (
-		<ListItem secondaryAction={ <IconButton edge="end" aria-label="comments"> </IconButton> } disablePadding>
+		<ListItem disablePadding>
             <ListItemButton>
                 {/* <ListItemText primary={userId} /> */}
                 <ListItemIcon>
