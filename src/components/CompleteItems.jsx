@@ -1,4 +1,5 @@
 import React from 'react'
+import { Typography } from '@mui/material'
 import { useSelector } from 'react-redux'
 
 const CompleteItems = () => {
@@ -7,7 +8,9 @@ const CompleteItems = () => {
 	)
 
 	return (
-        <h4>Total complete items: {todos.length}</h4>
+        <Typography variant="button" display="block" gutterBottom>
+            Total complete items: <span style={{color: "#66bb6a"}}>{todos.length}</span>
+        </Typography>
     )
 }
 

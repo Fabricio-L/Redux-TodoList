@@ -1,7 +1,8 @@
 import React, { useEffect } from 'react'
+import { List } from '@mui/material'
 import { useSelector, useDispatch } from 'react-redux'
-import TodoItem from './TodoItem'
 import { getTodosAsync } from '../redux/todoSlide'
+import TodoItem from './TodoItem'
 
 const TodoList = () => {
 	const dispatch = useDispatch()
@@ -12,11 +13,11 @@ const TodoList = () => {
 	}, [dispatch])
 
 	return (
-		<ul>
+		<List>
 			{todos.map((todo) => (
-				<TodoItem id={todo.id} userId={todo.userId} title={todo.title} completed={todo.completed} />
+				<TodoItem key={todo.id} id={todo.id} userId={todo.userId} title={todo.title} completed={todo.completed} />
 			))}
-		</ul>
+		</List>
 	)
 }
 

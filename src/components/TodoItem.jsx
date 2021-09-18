@@ -1,6 +1,8 @@
 import React from 'react'
+import { ListItem, ListItemButton, ListItemIcon, Checkbox, ListItemText, IconButton } from '@mui/material'
 import { useDispatch } from 'react-redux'
 import { toggleComplete, deleteTodo } from '../redux/todoSlide'
+import DeleteIcon from '@mui/icons-material/Delete';
 
 const TodoItem = ({ id, userId, title, completed }) => {
 	const dispatch = useDispatch()
@@ -14,18 +16,19 @@ const TodoItem = ({ id, userId, title, completed }) => {
 	}
 
 	return (
-		<li>
-			<div>
-				<span>
-					<input type='checkbox' checked={completed} onClick={handleCheckboxClick}></input>
-					{title}
-                    {userId}
-				</span>
-				<button onClick={handleDeleteClick}>
-					Delete
-				</button>
-			</div>
-		</li>
+		<ListItem secondaryAction={ <IconButton edge="end" aria-label="comments"> </IconButton> } disablePadding>
+            <ListItemButton>
+                {/* <ListItemText primary={userId} /> */}
+                <ListItemIcon>
+                    <Checkbox edge="start" checked={completed} tabIndex={-1} disableRipple onClick={handleCheckboxClick} />
+                </ListItemIcon>
+                <ListItemText primary={title} />
+            </ListItemButton>
+
+            <IconButton aria-label="delete" variant="outlined" color="error" onClick={handleDeleteClick}>
+                <DeleteIcon />
+            </IconButton>
+		</ListItem>
 	)
 }
 
