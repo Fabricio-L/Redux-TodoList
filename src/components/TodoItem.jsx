@@ -2,7 +2,8 @@ import React, { Fragment } from 'react'
 import { ListItem, ListItemButton, ListItemIcon, Checkbox, ListItemText, IconButton, Divider } from '@mui/material'
 import { useDispatch } from 'react-redux'
 import { toggleComplete, deleteTodo } from '../redux/todoSlice'
-import DeleteIcon from '@mui/icons-material/Delete';
+import UpdateModal from './UpdateModal'
+import DeleteIcon from '@mui/icons-material/Delete'
 
 const TodoItem = ({ id, userId, title, completed }) => {
 	const dispatch = useDispatch()
@@ -25,7 +26,8 @@ const TodoItem = ({ id, userId, title, completed }) => {
                     </ListItemIcon>
                     <ListItemText primary={title} />
                 </ListItemButton>
-
+                
+                <UpdateModal todoId={id} todoUser={userId} todoTitle={title} todoCompleted={completed} />
                 <IconButton aria-label="delete" variant="outlined" color="error" onClick={handleDeleteClick}>
                     <DeleteIcon />
                 </IconButton>

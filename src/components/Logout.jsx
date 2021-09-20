@@ -12,7 +12,7 @@ const Logout = () => {
 
     return (
         <Box component="form"  noValidate sx={{ mt: 1 }}>
-            <Button type="submit" fullWidth variant="contained" sx={{ mt: 3, mb: 2 }} onClick={(e) => handleLogout(e)} >
+            <Button type="submit" fullWidth sx={{ mt: 3, mb: 2 }} onClick={(e) => handleLogout(e)} >
                 Log Out
             </Button>
         </Box>
