@@ -1,7 +1,7 @@
 import React, { useEffect } from 'react'
 import { List } from '@mui/material'
 import { useSelector, useDispatch } from 'react-redux'
-import { getTodosAsync } from '../redux/todoSlide'
+import { getTodosAsync } from '../redux/todoSlice'
 import TodoItem from './TodoItem'
 
 const TodoList = () => {

@@ -12,7 +12,7 @@ export const getTodosAsync = createAsyncThunk(
     }
 )
 
-const todoSlide = createSlice({
+const todoSlice = createSlice({
     name: "todos",
     initialState: [
         // Test items if API doesn't works
@@ -48,5 +48,5 @@ const todoSlide = createSlice({
     }
 })
 
-export const { addTodo, toggleComplete, deleteTodo } = todoSlide.actions
-export default todoSlide.reducer
+export const { addTodo, toggleComplete, deleteTodo } = todoSlice.actions
+export default todoSlice.reducer

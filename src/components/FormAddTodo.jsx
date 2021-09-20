@@ -2,7 +2,7 @@
 import React, { useState } from 'react'
 import { TextField, Box, FormControl, Button } from '@mui/material'
 import { useDispatch } from 'react-redux'
-import { addTodo } from '../redux/todoSlide'
+import { addTodo } from '../redux/todoSlice'
 
 const FormAddTodo = () => {
 	const [value, setValue] = useState('')
